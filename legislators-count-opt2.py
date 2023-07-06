@@ -1,6 +1,4 @@
 # import module
-import csv
-
 import pandas as pd
 
 # read dataset
@@ -17,7 +15,7 @@ df_legislators_count = pd.DataFrame(columns=columns)
 for ind in df_legislators.index:
     df_votes_yea = df_vote_results.loc[(df_vote_results['legislator_id'] == df_legislators['id'][ind]) & (df_vote_results['vote_type'] == 1)]
     df_votes_nay = df_vote_results.loc[(df_vote_results['legislator_id'] == df_legislators['id'][ind]) & (df_vote_results['vote_type'] == 2)]
-    new_row_legislators_count = {'id': str(ind+1),'name':df_legislators['name'][ind],'num_supported_bills':str(len(df_votes_yea)),'num_opposed_bills': str(len(df_votes_nay))}
+    new_row_legislators_count = {columns[0]: str(ind+1),columns[1]:df_legislators['name'][ind],columns[2]:str(len(df_votes_yea)),columns[3]: str(len(df_votes_nay))}
     df_legislators_count.loc[len(df_legislators_count)] = new_row_legislators_count
 
 # create legislators-support-oppose-count file csv

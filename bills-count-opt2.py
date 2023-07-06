@@ -1,6 +1,4 @@
 # import module
-import csv
-
 import pandas as pd
 
 # read datasetd
@@ -26,7 +24,7 @@ for ind_bill in df_bills.index:
       id=id+1
       df_legislator_yea = df_vote_results_gb.loc[(df_vote_results_gb['vote_id'] == df_bill_votes['id'][ind_bill_votes]) & (df_vote_results_gb['vote_type'] == 1)]
       df_legislator_nay = df_vote_results_gb.loc[(df_vote_results_gb['vote_id'] == df_bill_votes['id'][ind_bill_votes]) & (df_vote_results_gb['vote_type'] == 2)]
-      new_row_bills_count = {'id': str(id),'title':df_bills['title'][ind_bill],'supporter_count':str(df_legislator_yea['legislator_id'].values[0]),'opposer_count': str(df_legislator_nay['legislator_id'].values[0]),'primary_sponsor': df_bills['sponsor_id'][ind_bill]}
+      new_row_bills_count = {columns[0]: str(id),columns[1]:df_bills['title'][ind_bill],columns[2]:str(df_legislator_yea['legislator_id'].values[0]),columns[3]: str(df_legislator_nay['legislator_id'].values[0]),columns[4]: df_bills['sponsor_id'][ind_bill]}
       df_bills_count.loc[len(df_bills_count)] = new_row_bills_count
 
 # create bills-support-oppose-count file csv

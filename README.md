@@ -105,7 +105,6 @@ $ python3 bills-count-opt2.py
 
 [Linkedin]: https://img.shields.io/badge/-Wellysson_Godinho-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/wellyssongodinho-236170234/
 [Linkedin-url]: https://linkedin.com/in/wellyssongodinho/
-
 [MUI.com]: https://img.shields.io/badge/MUI-007FFF?style=for-the-badge&logo=mui&logoColor=white
 [MUI-url]: https://mui.com/
 
